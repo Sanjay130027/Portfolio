@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANJAY | Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0F172A;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:#1E293B;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    z-index:1000;
+}
+
+.nav h2{
+    font-size:30px;
+}
+
+.nav-link{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-link a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    transition:.3s;
+}
+
+.nav-link a:hover{
+    color:#38BDF8;
+}
+
+
+section{
+    min-height:100vh;
+    padding:90px 10%;
+}
+
+
+#home{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+#home img{
+    width:260px;
+    height:270px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #3c847f;
+    margin-bottom:18px;
+    transition:.4s;
+    
+}
+
+
+#home img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #3c847f;
+}
+
+#home h1{
+    color: white;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+#home h3{
+    font-size:28px;
+    color:#1a5c97;
+    margin-bottom:20px;
+}
+
+#home span{
+    color:#38BDF8;
+}
+
+#home p{
+    max-width:700px;
+    line-height:1.8;
+    font-size:18px;
+    color: white;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 30px;
+    border:none;
+    border-radius:6px;
+    background: #38BDF8;
+    transition:.3s;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3c847f;
+}
+
+button a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    
+}
+
+
+#about{
+    min-height:100vh;
+    padding:100px 10%;
+    color: white;
+    
+}
+
+#about h2{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:40px;
+    
+}
+
+.about-content{
+    width:70%;
+    margin:0 auto;
+}
+
+.about-content p{
+    font-size:20px;
+    line-height:1.8;
+    color: white;
+    text-align:justify;
+    margin-bottom:20px;
+}
+.about-content{
+    width:1000px;
+   background: #1E293B;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:0.3s;
+}
+
+.about-content span{
+    color:#3c847f;
+    font-weight:bold;
+}
+#about h2,
+#skills h2,
+#projects h2,
+#contact h2
+{
+    margin-bottom: 20px;
+    font-size:30px;
+    
+    text-align: center;
+    
+}
+#projects{
+    min-height:100vh;
+    padding:100px 10%;
+   
+}
+#skills{
+    min-height:100vh;
+    padding:100px 10%;
+    
+}
+#skills h2{
+    color:  white;
+}
+
+.skills-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.skill-card{
+    width:170px;
+    height:190px;
+    background: #1E293B;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.skill-card img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.skill-card h4{
+    font-size:20px;
+    color:white;
+}
+#projects{
+    min-height:100vh;
+    padding:100px 10%;
+   
+}
+
+.project-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+#projects h2{
+    color: white;
+}
+
+.project-card{
+    width:400px;
+   background: #1E293B;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.project-card h3{
+    margin:15px 0;
+    color:#076861;
+    font-size:22px;
+}
+
+.project-card p{
+    color: white;
+    line-height:1.6;
+    text-align:justify;
+}
+
+.project-card h4{
+    
+    margin:15px 0 10px;
+    
+}
+#contact{
+    min-height:100vh;
+    padding:100px 10%;
+    
+}
+
+#contact h2{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+    color:white;
+}
+
+.contact-box{
+    width:500px;
+    margin:0 auto;
+    background:#1E293B;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.contact-box p{
+    font-size:18px;
+    margin:18px 0;
+    color: white;
+}
+.contact-box p strong{
+    color:white;
+}
+
+.contact-box a{
+    color:#076861;
+    text-decoration:none;
+}
+
+.contact-box a:hover{
+    text-decoration:underline;
+}
+
+footer{
+    
+    text-align:center;
+    padding: 20px;
+    background:#1E293B;
+    color: white;
+    font-size: medium;
+    
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="nav">
+
+<h2>SANJAY</h2>
+
+<ul class="nav-link">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section id="home">
+
+<img src="img.jpeg" alt="Profile">
+
+<h1>Hello, I'm <span>SANJAY <S></S></span></h1>
+
+<h3>Front End Developer</h3>
+
+<p>
+I'm a passionate Frontend Developer who enjoys creating modern,
+responsive, and user-friendly websites. I specialize in HTML, CSS,
+JavaScript, Bootstrap and continuously explore new technologies to build
+attractive and interactive web applications with excellent user
+experiences.
+</p>
+
+<button>
+<a href="CV.pdf" target="_blank">View CV</a>
+</button>
+
+</section>
+
+<section id="about">
+
+    <h2>About Me</h2>
+    <div class="about-content">
+        <p>
+            Hello! I'm <span>SANJAY S</span>, a passionate Frontend Developer
+            and BCA student at Saveetha College of Liberal Arts and Sciences.
+            I enjoy creating responsive and user-friendly websites using
+            HTML, CSS, JavaScript, Bootstrap and continuously improving my web
+            development skills through hands-on projects.
+        </p>
+
+        <p>
+            As a fresher, I am eager to learn new technologies, work on
+            real-world projects, and gain industry experience. I am a
+            quick learner, a good team player, and always ready to take
+            on new challenges that help me grow as a developer.
+        </p>
+    </div>
+
+
+
+</section>
+
+<section id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <img src="html-5.png" alt="HTML">
+            <h4>HTML</h4>
+        </div>
+
+        <div class="skill-card">
+            <img src="css-3.png" alt="CSS">
+            <h4>CSS</h4>
+        </div>
+
+        <div class="skill-card">
+            <img src="java-script.png" alt="JavaScript">
+            <h4>JavaScript</h4>
+        </div>
+
+        <div class="skill-card">
+            <img src="bootstrap.png" alt="Bootstrap">
+            <h4>Bootstrap</h4>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <img src="accuracy.png" alt="Project">
+
+            <h3>AI Resume Classifier</h3>
+
+            <p>
+                Developed an AI-based resume classification system that 
+                automatically categorizes resumes into job roles such as Software Developer, Data Scientist, 
+                HR, and Marketing. Used the BERT Transformer model to understand the meaning of resume text and 
+                Support Vector Machine (SVM) for accurate classification. The project helps automate resume screening,
+                improve classification accuracy, and reduce manual effort in the recruitment process.
+            </p>
+
+            
+
+        </div>
+         <div class="project-card">
+
+        <img src="skill.png" alt="Cricket Match Prediction">
+
+        <h3>AI Skill Identifier</h3>
+
+        <p>
+            Built an intelligent system that automatically detects and identifies candidate skills from resume data.
+            The project uses a Convolutional Neural Network (CNN) to learn useful patterns from the resume text and a 
+            Random Forest model to classify the candidate's skills accurately. This solution makes the recruitment process 
+            faster by helping recruiters identify relevant skills with less manual effort.
+        </p>
+
+    </div>
+
+    <div class="project-card">
+
+        <img src="resume.png" alt="Cricket Match Prediction">
+
+        <h3>Hybrid Resume Screening</h3>
+
+        <p>
+            Designed a hybrid AI system to improve the accuracy of resume screening by identifying and 
+            classifying candidate information effectively. The project combines Long Short-Term Memory (LSTM) 
+            for understanding resume text with Logistic Regression for classification. This approach helps recruiters 
+            filter resumes more accurately, reduces incorrect candidate selection, and supports a faster hiring process.
+        </p>
+
+    </div>
+<div class="project-card">
+
+        <img src="analysis.png" alt="Cricket Match Prediction">
+
+        <h3>XGBoost Resume Analyzer</h3>
+
+        <p>
+           Created a machine learning system to analyze resumes and categorize them based on their information. 
+            The project compares the performance of XGBoost and K-Nearest Neighbor (KNN) to determine which algorithm 
+            produces more accurate results. XGBoost achieved better performance, making the system more reliable and 
+            efficient for resume analysis and candidate evaluation.
+        </p>
+
+    </div>
+
+
+    </div>
+
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-box">
+        <p><strong>Name:</strong> SANJAY S</p>
+
+        <p><strong>Email:</strong> sanjaisuresh1305@gmail.com</p>
+
+        <p><strong>Phone:</strong> +91 9677731273</p>
+
+        <p><strong>Location:</strong> Veppampattu, Chennai</p>
+
+        <p><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/sanjay-suresh-69072b3a0?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+                linkedin.com/in/sanjay-suresh-69072b3a0
+            </a>
+        </p>
+
+        <p><strong>GitHub:</strong>
+            <a href="https://Sanjay130027.github.io/Portfolio/" target="_blank">
+                github.com/Sanjay130027
+            </a>
+        </p>
+
+    </div>
+
+</section>
+<footer>
+© 2026 SANJAY | Portfolio
+</footer>
+
+
+</body>
+</html>
